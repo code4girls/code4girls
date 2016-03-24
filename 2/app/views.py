@@ -3,4 +3,4 @@ from flask import render_template
  
 @app.route('/')
 def lucky_static():
-    return render_template('html.html')
+    return render_template('simple.html')
