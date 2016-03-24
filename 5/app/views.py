@@ -18,3 +18,12 @@ def lucky_static():
 def name_length(name):
 	length = len(name)
 	return render_template('name.html', name=name.capitalize(), length=length)
+
+@app.route('/horoskop/')
+def get_horoskop():
+	a = ['In deinen Sternen steht, dass ', 'Auf dem Grunde der Kaffeetasse ist zu lesen, dass ', 'Das Orakel sagt, dass ']
+	b = ['Du bald ', 'Du für immer und ewig ', 'Du in deinem Leben ']
+	c = ['glücklich wirst.', 'Liebe findest.', 'reich und berühmt wirst.']
+	horoskop = choice(a)+choice(b)+choice(c)
+	lucky_num = randint(1, 100)
+	return render_template('horoskop.html', horoskop=horoskop, lucky_num=lucky_num)
