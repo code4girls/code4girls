@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block page_title %}
+	<h1>Code4Girls Horoskop!</h1>
+{% endblock %}
+
+{% block content %}
+
+	<form action="" method="post" name="get_name">
+		{{ form.hidden_tag() }}
+		<label for="name">Dein Name:</label>
+		{{ form.name }}</br>
+		<input type="submit">
+	</form>
+
+{% endblock %}

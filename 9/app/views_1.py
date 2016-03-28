@@ -1,6 +1,7 @@
 from random import randint
 from random import choice
-from .forms import GetLucky
+from .forms import GetLucky 
+from .forms import GetName
 
 from app import app
 from flask import render_template
@@ -15,10 +16,6 @@ def lucky_static():
  #   lucky_num = randint(1, int(max))
   #  return render_template('simple.html', lucky_num=lucky_num)
 
-@app.route('/<name>/')
-def name_length(name):
-    length = len(name)
-    return render_template('name.html', name=name.capitalize(), length=length)
 
 @app.route('/horoskop/')
 def get_horoskop():
@@ -42,4 +39,14 @@ def game():
 def get_nums():
 	form = GetLucky()
 	return render_template('get_lucky.html', form=form)
+
+@app.route('/hrsk/', methods=['GET', 'POST'])
+def get_name():
+	form = GetName()
+	return render_template('hrsk.html', form=form)
+
+#@app.route('/<name>/')
+#def name_length(name):
+#    length = len(name)
+#    return render_template('name.html', name=name.capitalize(), length=length)
 
